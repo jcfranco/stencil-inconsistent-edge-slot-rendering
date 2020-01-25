@@ -1,0 +1,24 @@
+:host {
+  display: inline-flex;
+  border: 2px dashed gray;
+}
+
+.content {
+  // 1. [Edge] no border on default slot
+  ::slotted(*) {
+    border: 2px dashed blue;
+  }
+}
+
+// 2. [Edge] extra border shows up on host
+//::slotted(:not([slot=other])) {
+//  border: 2px dashed blue;
+//}
+
+::slotted([slot=other]) {
+  border: 2px dashed red;
+}
+
+::slotted(*) {
+  margin: 8px;
+}

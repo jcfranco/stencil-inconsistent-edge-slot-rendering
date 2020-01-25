@@ -3,7 +3,7 @@ import { format } from '../../utils/utils';
 
 @Component({
   tag: 'my-component',
-  styleUrl: 'my-component.css',
+  styleUrl: 'my-component.scss',
   shadow: true
 })
 export class MyComponent {
@@ -27,6 +27,14 @@ export class MyComponent {
   }
 
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return <div>
+      <div>
+        <div>{this.getText()}</div>
+        <slot name="other" />
+      </div>
+      <div class="content">
+        <slot />
+      </div>
+    </div>;
   }
 }

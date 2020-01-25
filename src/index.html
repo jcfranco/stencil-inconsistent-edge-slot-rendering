@@ -11,7 +11,10 @@
 </head>
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <my-component>
+    <div slot="other">I'm in the named slot (red border)</div>
+    <div>I'm in the default slot (blue border)</div>
+  </my-component>
 
 </body>
 </html>
